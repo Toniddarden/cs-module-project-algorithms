@@ -7,8 +7,31 @@ Item = namedtuple('Item', ['index', 'size', 'value'])
 
 def knapsack_solver(items, capacity):
     # Your code here
+    items = []
+    capacity = sum(items, 0)
+    n_items = int(input('Enter in your treasures value: '))
+    # item_1 = input("Enter in your first treasure value: ")
+    # item_2 = input("Enter in your second treasure value: ")
+    # item_3 = input("Enter in your third treasure value: ")
+      # value = (input())
+      # items.append(value)
+    # for n in items:
+    # base case 
+    # **** for every item inputed, 
+    for x in range(0, n_items, -1):
+        # **** if that item is over(greater) than the capacity .pop() that item off 
+        if x > capacity:
+          items.pop(x)
+        # **** if that item is under capacity, add it to the items list 
+        elif x < capacity:
+          items.append(x)
+        else:
+          return print('please enter another value')
+    
+    total_val = Item(items)
+    print(total_val) 
 
-    pass
+    # pass
 
 
 if __name__ == '__main__':
